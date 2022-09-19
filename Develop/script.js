@@ -1,6 +1,4 @@
 // Assignment Code
-var characters = "0123456789abcdefghijklmnopqrstuvwxyz!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
-
 var generateBtn = document.querySelector("#generate");
 
 /*creating the generate password function*/
@@ -22,6 +20,17 @@ function generatePassword() {
     window.alert("Please choose a password length between 8 and 128 characters.")
     return
   }
+  /*creating confirm windows that will ask about the password criteria*/
+  /*creating variables with criteria*/
+  var userWantsNumbers = window.confirm("Would you like to have numbers in your password?")
+  var userWantsSymbols = window.confirm("Would you like to have symbols in your password?")
+  var userWantsLowercase = window.confirm("Would you like to have lower case letters in your password?")
+  var userWantsUppercase = window.confirm("Would you like to have upper case letters in your password?")
+
+  var numberList = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+  var symbolList = ["!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".","/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"]
+  var lowercaseList = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+  var uppercaseList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 }
 
 // Write password to the #password input
