@@ -1,5 +1,9 @@
 // Assignment Code
+var characters = "0123456789abcdefghijklmnopqrstuvwxyz!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+
 var generateBtn = document.querySelector("#generate");
+
+/*creating the generate password function*/
 
 // Write password to the #password input
 function writePassword() {
