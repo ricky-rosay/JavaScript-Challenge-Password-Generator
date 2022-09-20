@@ -40,14 +40,14 @@ function generatePassword() {
   var userWantsSymbols = window.confirm("Would you like to have symbols in your password?")
   var userWantsLowercase = window.confirm("Would you like to have lower case letters in your password?")
   var userWantsUppercase = window.confirm("Would you like to have upper case letters in your password?")
-
+/*criteria for each requirement*/
   var numberList = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
   var symbolList = ["!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".","/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"]
   var lowercaseList = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
   var uppercaseList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
   var generatedPassword = []
-
+/*this will give the function the commands of what the user wants in their password through the prompt boxes*/
   if (userWantsNumbers === true) {
     generatedPassword.push(numberList)
   }
@@ -63,14 +63,20 @@ function generatePassword() {
   if (userWantsUppercase === true) {
     generatedPassword.push(uppercaseList)
   }
+/*this if will cause the defualt to be set to symbol list if the user chooses no criteria*/
+  if (generatedPassword === 0) {
+    generatedPassword.push(symbolList)
+  }
 
   var givenPassword = ""
 
   for (var i = 0; i < passwordLength; i++) {
     var randomList = getRandomItem(generatedPassword)
     var randomChar = getRandomItem(randomList)
-    console.log(randomChar)
+    givenPassword += randomChar
   }
+/*this will give the password that was generated into the text box*/
+  return givenPassword
   
 }
 
