@@ -6,7 +6,7 @@ Password generators are a good application that is needed for those who tend to 
 
 ## Installation
 
-(add url here)
+https://ricky-rosay.github.io/JavaScript-Challenge-Password-Generator/
 
 ## Usage
 
