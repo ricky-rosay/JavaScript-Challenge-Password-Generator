@@ -1,6 +1,20 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+/*this will give a random number*/
+function randomInt(min, max) {
+  if (!max) {
+    max = min
+    min = 0
+  }
+  var rand = Math.random()
+  return Math.floor(min*(1 - rand) + rand*max)
+}
+
+function getRandomItem(list) {
+  return list[randomInt(list.length)]
+}
+
 /*creating the generate password function*/
 /*within return i will have a var in which it will display the actual generated password*/
 /*window.prompt will bring up a window that will display my choice of text*/
@@ -31,6 +45,33 @@ function generatePassword() {
   var symbolList = ["!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".","/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"]
   var lowercaseList = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
   var uppercaseList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+
+  var generatedPassword = []
+
+  if (userWantsNumbers === true) {
+    generatedPassword.push(numberList)
+  }
+
+  if (userWantsSymbols === true) {
+    generatedPassword.push(symbolList)
+  }
+
+  if (userWantsLowercase === true) {
+    generatedPassword.push(lowercaseList)
+  }
+
+  if (userWantsUppercase === true) {
+    generatedPassword.push(uppercaseList)
+  }
+
+  var givenPassword = ""
+
+  for (var i = 0; i < passwordLength; i++) {
+    var randomList = getRandomItem(generatedPassword)
+    var randomChar = getRandomItem(randomList)
+    console.log(randomChar)
+  }
+  
 }
 
 // Write password to the #password input
